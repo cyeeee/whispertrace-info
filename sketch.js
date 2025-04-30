@@ -37,20 +37,17 @@ function draw() {
   rect(windowWidth/2, windowHeight/2, windowWidth*0.9, windowHeight*0.9, 30);
 
   imageMode(CENTER);
-  image(Img_logo, windowWidth/2, windowHeight*0.3);
+  image(Img_logo, windowWidth/2, windowHeight*0.25);
 
   fill(0);
-  textAlign(CENTER, CENTER);
+  textAlign(CENTER);
   textWrap(WORD);
   textFont(myFont1);
   textSize(windowHeight / 40);
-  text(txtArray[txtIdx], windowWidth/2, windowHeight*0.6, windowWidth*0.5);
-  
-  text("-", windowWidth/2, windowHeight*0.65, windowWidth*0.5);
-  text("Whispertrace", windowWidth/2, windowHeight*0.7, windowWidth*0.5);
+  text(txtArray[txtIdx]+"\n\n-\n\nWhispertrace", windowWidth/2, windowHeight/2, windowWidth*0.6);
 
   textFont(myFont2);
   textSize(windowHeight / 40);
-  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", windowWidth/2, windowHeight*0.8, windowWidth*0.5);
+  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", windowWidth/2, windowHeight*0.85, windowWidth*0.6);
 
 }
