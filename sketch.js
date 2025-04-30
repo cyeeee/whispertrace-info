@@ -130,6 +130,20 @@ function drawBack() {
 function mousePressed() {
   isDragging = true;
   lastMouseX = mouseX;
+
+  let a = ((angle % 360) + 360) % 360;
+  if (a > 90 && a < 270) { // back
+    let localX = mouseX - width / 2;
+    let localY = mouseY - height / 2;
+    localX = -localX;
+
+    let w = textWidth(linkTxt);
+    let h = cardSizeX / 20;
+
+    if (localX > -w && localX < w && localY > linkTxtY-h && localY < linkTxtY) {
+      window.open(link, "_self");
+    }
+  }
 }
 
 function mouseDragged() {
@@ -156,22 +170,6 @@ function mouseReleased() {
       targetAngle = 0;
     } else {
       targetAngle = 180;
-    }
-  }
-}
-
-function mouseClicked() {
-  let a = ((angle % 360) + 360) % 360;
-  if (a > 90 && a < 270) { // back
-    let localX = mouseX - width / 2;
-    let localY = mouseY - height / 2;
-    localX = -localX;
-
-    let w = textWidth(linkTxt);
-    let h = cardSizeX / 20;
-
-    if (localX > -w/2 && localX < w/2 && localY > linkTxtY-h/2 && localY < linkTxtY+h/2) {
-      window.open(link, "_black");
     }
   }
 }
