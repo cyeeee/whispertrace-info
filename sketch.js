@@ -135,7 +135,7 @@ function mousePressed() {
 function mouseDragged() {
   if (isDragging) {
     let dx = mouseX - lastMouseX;
-    angle += dx * 0.5;
+    angle += dx;
     targetAngle = angle;
     lastMouseX = mouseX;
   }
