@@ -1,5 +1,7 @@
 var Img_logo, myFont1, myFont2;
 
+var cardSizeX, cardSizeY;
+
 var txtArray = [];
 var txtIdx;
 
@@ -13,11 +15,15 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   if (windowWidth < windowHeight) {
-    Img_logo.resize(windowWidth/3, 0);
+    cardSizeX = windowWidth*0.9;
+    cardSizeY = cardSizeX*2;
   }
   else {
-    Img_logo.resize(0, windowHeight/3);
+    cardSizeY = windowHeight*0.9;
+    cardSizeX = cardSizeY/2;
   }
+
+  Img_logo.resize(cardSizeX/2.5, 0);
 
   txtArray.push("Trace the Whispers of What Machines Can't Imagine");
   txtArray.push("The Puzzle Isn't the Game - It's What the AI Left Out");
@@ -34,20 +40,20 @@ function draw() {
   background(0);
   fill(229, 220, 198);
   rectMode(CENTER);
-  rect(windowWidth/2, windowHeight/2, windowWidth*0.9, windowHeight*0.9, 30);
+  rect(windowWidth/2, windowHeight/2, cardSizeX, cardSizeY, 30);
 
   imageMode(CENTER);
-  image(Img_logo, windowWidth/2, windowHeight*0.25);
+  image(Img_logo, windowWidth/2, cardSizeY*0.35);
 
   fill(0);
   textAlign(CENTER);
   textWrap(WORD);
   textFont(myFont1);
-  textSize(windowHeight / 40);
-  text(txtArray[txtIdx]+"\n\n-\n\nWhispertrace", windowWidth/2, windowHeight/2, windowWidth*0.6);
+  textSize(cardSizeX / 20);
+  text(txtArray[txtIdx]+"\n\n\n-\nWhispertrace", windowWidth/2, cardSizeY/5*3, cardSizeX*0.8);
 
   textFont(myFont2);
-  textSize(windowHeight / 40);
-  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", windowWidth/2, windowHeight*0.85, windowWidth*0.6);
+  textSize(cardSizeX / 20);
+  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", windowWidth/2, cardSizeY*0.9, cardSizeX*0.8);
 
 }
