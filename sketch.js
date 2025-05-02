@@ -34,9 +34,9 @@ function setup() {
   }
 
   Img_logo_front.resize(cardSizeX/2.5, 0);
-  Img_logo_back.resize(cardSizeX/4, 0);
+  Img_logo_back.resize(cardSizeX/3.3, 0);
 
-  linkTxtY = -cardSizeY/6.8;
+  linkTxtY = 0;
 
   txtArray.push("Trace the Whispers of What Machines Can't Imagine");
   txtArray.push("The Puzzle Isn't the Game - It's What the AI Left Out");
@@ -84,7 +84,7 @@ function drawFront() {
 
   textFont(myFont2);
   textSize(cardSizeX / 20);
-  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", 0, cardSizeY/3, cardSizeX*0.8);
+  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", 0, cardSizeY/2.8, cardSizeX*0.8);
 }
 
 function drawBack() {
@@ -97,24 +97,22 @@ function drawBack() {
   scale(-1, 1);
   
   imageMode(CENTER);
-  image(Img_logo_back, 0, 0);
+  image(Img_logo_back, 0, cardSizeY/5);
 
   fill(0);
   textAlign(CENTER);
   textWrap(WORD);
   textFont(myFont1);
   textSize(cardSizeX / 15);
-  text("Chenyi Wang", 0, -cardSizeY/3, cardSizeX*0.8);
-  textSize(cardSizeX / 30);
-  text("Designer & Developer", 0, -cardSizeY/3.3, cardSizeX*0.8);
-  textSize(cardSizeX / 23);
-  text("-\nchenyi.w@nyu.edu", 0, -cardSizeY/3.7, cardSizeX*0.8);
+  text("Whispertrace", 0, -cardSizeY/2.8, cardSizeX*0.8);
 
   textFont(myFont2);
   textSize(cardSizeX / 19);
-  text("Whispertrace is inspired by the “black box” effect in modern technology, especially Artificial Intelligence (AI), which leads to user overwhelm and mistrust. By leveraging the properties of decision trees and pruning algorithms in AI and focusing on human cognition, this project created a gamified decision-making experience.", 0, cardSizeY/7, cardSizeX*0.8);
+  text("is inspired by the “black box” effect in modern technology, especially Artificial Intelligence (AI), which leads to user overwhelm and mistrust. By leveraging the properties of decision trees and pruning algorithms in AI and focusing on human cognition, this project created a gamified decision-making experience.", 0, -cardSizeY/3.3, cardSizeX*0.76);
+  textSize(cardSizeX / 25);
+  text("May 2025", 0, cardSizeY/25, cardSizeX*0.8);
   textSize(cardSizeX / 20);
-  text("May 2025", 0, cardSizeY/2.4, cardSizeX*0.8);
+  text("A puzzle adventure that explores the limits of AI and the infinite creativity of the human mind.", 0, cardSizeY/2.8, cardSizeX*0.8);
 
   textFont(myFont1);
   textSize(cardSizeX / 20);
